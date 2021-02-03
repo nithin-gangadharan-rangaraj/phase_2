@@ -23,7 +23,7 @@ pickle_in = open('svm_classifier.pkl','rb')
 clf_svm = pickle.load(pickle_in)
 
 pickle_in1 = open('full_data','rb')
-data = pickle.load(pickle_in1)
+data = pd.DataFrame(pickle.load(pickle_in1))
 
 st.title("Heart Risk Prediction")
 
@@ -60,6 +60,11 @@ def main():
 			elif (probs[0][0] > probs[0][1]):
 				st.write("No worries, You are safe!")
 	
+	if(st.sidebar.checkbox("Age analysis")):
+		st.subheader("AGE - Statistics")
+		positive_cases = data[data['TenYearCHD'] == 1]
+		sns.countplot(x='age',data = positive_cases, hue = 'TenYearCHD', palette='husl')
+		st.pyplot()
 		
 if __name__ == '__main__':
 	main()
