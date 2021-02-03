@@ -66,8 +66,7 @@ def main():
 		positive_cases = data[data['TenYearCHD'] == 1]
 		plt.figure(figsize=(15,6))
 		sns.countplot(x='age',data = positive_cases, hue = 'TenYearCHD', palette='husl')
-		st.pyplot()
-		st.dataframe(positive_cases)
+		st.write(plt.show())
 		
 		
 if __name__ == '__main__':
