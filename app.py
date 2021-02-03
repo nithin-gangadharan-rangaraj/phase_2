@@ -3,6 +3,7 @@ import numpy as np
 import pickle
 from PIL import Image
 import sklearn
+import seaborn
 
 PAGE_CONFIG = {"page_title":"Heart Risk Prediction","page_icon":"👨‍⚕️","layout":"centered"}
 st.set_page_config(**PAGE_CONFIG)
