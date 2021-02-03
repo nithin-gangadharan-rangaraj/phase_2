@@ -63,8 +63,8 @@ def main():
 	if(st.sidebar.checkbox("Age analysis")):
 		st.subheader("AGE - Statistics")
 		positive_cases = data[data['TenYearCHD'] == 1]
-		sns.countplot(x='age',data = positive_cases, hue = 'TenYearCHD', palette='husl')
-		st.pyplot()
+		fig = sns.countplot(x='age',data = positive_cases, hue = 'TenYearCHD', palette='husl')
+		st.pyplot(fig)
 		
 if __name__ == '__main__':
 	main()
