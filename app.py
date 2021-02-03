@@ -22,6 +22,9 @@ background-size: cover;
 pickle_in = open('svm_classifier.pkl','rb')
 clf_svm = pickle.load(pickle_in)
 
+pickle_in1 = open('full_data','rb')
+data = pickle.load(pickle_in1)
+
 st.title("Heart Risk Prediction")
 
 def scale_fun(data):
