@@ -64,6 +64,7 @@ def main():
 		st.subheader("AGE - Statistics")
 		positive_cases = data[data['TenYearCHD'] == 1]
 		sns.countplot(x='age',data = positive_cases, hue = 'TenYearCHD', palette='husl')
+		plt.figure(figsize=(15,6))
 		st.pyplot()
 		st.dataframe(positive_cases)
 		
