@@ -43,7 +43,7 @@ def main():
 	st.sidebar.write("Check the box for predicting *heart risk*")
 	if(st.sidebar.checkbox("Risk predictor")):
 		st.subheader("*Enter the following parameters for prediction*")
-		age = st.number_input("Enter Age")
+		age = st.select_slide("Select your age", 1, 100)
 		totChol = st.number_input("Enter Cholesterol")
 		sysBP = st.number_input("Enter Systolic BP")
 		diaBP = st.number_input("Enter Diastolic BP")
