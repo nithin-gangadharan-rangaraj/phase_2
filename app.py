@@ -4,7 +4,7 @@ import pandas as pd
 import pickle
 from PIL import Image
 import sklearn
-import seaborn
+import seaborn as sns
 import matplotlib.pyplot as plt
 
 PAGE_CONFIG = {"page_title":"Heart Risk Prediction","page_icon":"👨‍⚕️","layout":"centered"}
