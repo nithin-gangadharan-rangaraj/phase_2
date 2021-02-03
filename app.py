@@ -61,6 +61,7 @@ def main():
 				st.write("No worries, You are safe!")
 	
 	if(st.sidebar.checkbox("Age analysis")):
+		st.set_option('deprecation.showPyplotGlobalUse', False)
 		st.subheader("AGE - Statistics")
 		positive_cases = data[data['TenYearCHD'] == 1]
 		plt.figure(figsize=(15,6))
