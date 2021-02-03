@@ -66,6 +66,8 @@ def main():
 		#fig = sns.countplot(x='age',data = positive_cases, hue = 'TenYearCHD', palette='husl')
 		#st.pyplot(fig)
 		st.dataframe(positive_cases)
+		hist_values = np.histogram(positive_Cases[age], bins=5)[0]
+		st.bar_plot(hist_values)
 		
 if __name__ == '__main__':
 	main()
