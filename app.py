@@ -19,7 +19,7 @@ background-size: cover;
 </style>
 '''
 
-pickle_in = open('svm_classifier.pkl','rb')
+pickle_in = open('prediction_model.pkl','rb')
 clf_svm = pickle.load(pickle_in)
 
 pickle_in1 = open('full_data','rb')
