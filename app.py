@@ -63,11 +63,10 @@ def main():
 	if(st.sidebar.checkbox("Age analysis")):
 		st.subheader("AGE - Statistics")
 		positive_cases = data[data['TenYearCHD'] == 1]
-		#fig = sns.countplot(x='age',data = positive_cases, hue = 'TenYearCHD', palette='husl')
-		#st.pyplot(fig)
+		sns.countplot(x='age',data = positive_cases, hue = 'TenYearCHD', palette='husl')
+		st.pyplot()
 		st.dataframe(positive_cases)
-		hist_values = np.histogram(positive_cases['age'], bins=1)[0]
-		st.bar_chart(hist_values)
+		
 		
 if __name__ == '__main__':
 	main()
