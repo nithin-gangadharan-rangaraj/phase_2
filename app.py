@@ -7,7 +7,7 @@ import sklearn
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-PAGE_CONFIG = {"page_title":"Heart Risk Prediction","page_icon":"🩺","layout":"centered"}
+PAGE_CONFIG = {"page_title":"Heart Risk Prediction","page_icon":"💪","layout":"centered"}
 st.set_page_config(**PAGE_CONFIG)
 
 html = '''
