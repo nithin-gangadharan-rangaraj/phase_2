@@ -13,7 +13,7 @@ st.set_page_config(**PAGE_CONFIG)
 html = '''
 <style>
 body {
-background-image: url("https://img.freepik.com/free-vector/white-elegant-texture-wallpaper_23-2148421854.jpg?size=626&ext=jpg&ga=GA1.2.145878890.1611360000");
+background-image: url("https://images.wallpapersden.com/image/download/simple-red-texture-pattern_a2lqamqUmZqaraWkpJRmaWllrWhlaWU.jpg");
 background-size: cover;
 }
 </style>
