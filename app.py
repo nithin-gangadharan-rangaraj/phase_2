@@ -13,7 +13,7 @@ st.set_page_config(**PAGE_CONFIG)
 html = '''
 <style>
 body {
-background-image: url("https://www.wallpapertip.com/wmimgs/129-1290957_pink-colored-wallpaper-solid-colors-red-light-color.jpg");
+background-image: url("https://wallpapercave.com/wp/wp2838450.jpg");
 background-size: cover;
 }
 </style>
