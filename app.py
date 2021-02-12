@@ -44,7 +44,7 @@ def main():
 	totChol = st.number_input("Enter Cholesterol")
 	sysBP = st.number_input("Enter Systolic BP")
 	diaBP = st.number_input("Enter Diastolic BP")
-	BMI = st.slider("Select your age", 1, 50)
+	BMI = st.slider("Select your BMI", 1, 50)
 	heartrate = st.number_input("Enter Heart Rate")
 	glucose = st.number_input("Enter Glucose")
 	x = [age, totChol, sysBP, diaBP, BMI, heartrate, glucose]
