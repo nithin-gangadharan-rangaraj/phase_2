@@ -51,7 +51,7 @@ def main():
 	new = np.array(scale_fun(x))
 	if(st.button("Predict")):
 		probs = model.predict_proba(new.reshape(1, -1))
-		cls = model.predict_class(new.reshape(1, -1))
+		cls = model.predict(new.reshape(1, -1))
 		st.write(cls)
 		#if (probs[0][1] > probs[0][0]):
 		#	percentage = probs[0][1] * 100
