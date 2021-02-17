@@ -6,7 +6,6 @@ from PIL import Image
 import sklearn
 import seaborn as sns
 import matplotlib.pyplot as plt
-import knn.pkl as model
 
 PAGE_CONFIG = {"page_title":"Heart Risk Prediction","page_icon":"💪","layout":"centered"}
 st.set_page_config(**PAGE_CONFIG)
@@ -20,11 +19,11 @@ background-size: cover;
 </style>
 '''
 
-#pickle_in = open('knn.pkl','rb')
-#model = pickle.load(pickle_in)
+pickle_in = open('knn.pkl','rb')
+model = pickle.load(pickle_in)
 
-pickle_in1 = open('full_data','rb')
-data = pd.DataFrame(pickle.load(pickle_in1))
+#pickle_in1 = open('full_data','rb')
+#data = pd.DataFrame(pickle.load(pickle_in1))
 
 st.title("Heart Risk Prediction")
 
