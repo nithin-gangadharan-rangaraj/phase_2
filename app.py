@@ -6,6 +6,7 @@ from PIL import Image
 import sklearn
 import seaborn as sns
 import matplotlib.pyplot as plt
+import knn.pkl as model
 
 PAGE_CONFIG = {"page_title":"Heart Risk Prediction","page_icon":"💪","layout":"centered"}
 st.set_page_config(**PAGE_CONFIG)
@@ -19,8 +20,8 @@ background-size: cover;
 </style>
 '''
 
-pickle_in = open('classifier1.pkl','rb')
-clf_svm = pickle.load(pickle_in)
+#pickle_in = open('knn.pkl','rb')
+#model = pickle.load(pickle_in)
 
 pickle_in1 = open('full_data','rb')
 data = pd.DataFrame(pickle.load(pickle_in1))
@@ -50,7 +51,7 @@ def main():
 	x = [age, totChol, sysBP, diaBP, BMI, heartrate, glucose]
 	new = np.array(scale_fun(x))
 	if(st.button("Predict")):
-		probs = clf_svm.predict_proba(new.reshape(1, -1))
+		probs = model.predict_proba(new.reshape(1, -1))
 		if (probs[0][1] > probs[0][0]):
 			percentage = probs[0][1] * 100
 			st.write("You are ",round(percentage,2),"% at a risk of developing CVD!")
