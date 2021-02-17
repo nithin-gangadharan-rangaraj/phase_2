@@ -51,11 +51,15 @@ def main():
 	new = np.array(scale_fun(x))
 	if(st.button("Predict")):
 		probs = model.predict_proba(new.reshape(1, -1))
-		if (probs[0][1] > probs[0][0]):
-			percentage = probs[0][1] * 100
-			st.write("You are ",round(percentage,2),"% at a risk of developing CVD!")
-		elif (probs[0][0] > probs[0][1]):
-			st.write("No worries, You are safe!")
+		cls = model.predict_classes(new.reshape(1, -1))
+		st.write(cls)
+		#if (probs[0][1] > probs[0][0]):
+		#	percentage = probs[0][1] * 100
+		#	st.write("You are ",round(percentage,2),"% at a risk of developing CVD!")
+		#elif (probs[0][0] > probs[0][1]):
+		#	st.write("No worries, You are safe!")
+	
+	
 	
 	#if(st.sidebar.checkbox("Age analysis")):
 	#	st.set_option('deprecation.showPyplotGlobalUse', False)
