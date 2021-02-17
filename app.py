@@ -52,12 +52,15 @@ def main():
 	if(st.button("Predict")):
 		probs = model.predict_proba(new.reshape(1, -1))
 		cls = model.predict(new.reshape(1, -1))
-		st.write(cls)
 		#if (probs[0][1] > probs[0][0]):
 		#	percentage = probs[0][1] * 100
 		#	st.write("You are ",round(percentage,2),"% at a risk of developing CVD!")
 		#elif (probs[0][0] > probs[0][1]):
 		#	st.write("No worries, You are safe!")
+		if(cls == 1):
+			st.write("Risk")
+		elif(cls == 0):
+			st.write("Safe")
 	
 	
 	
