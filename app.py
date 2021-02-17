@@ -58,9 +58,9 @@ def main():
 		#elif (probs[0][0] > probs[0][1]):
 		#	st.write("No worries, You are safe!")
 		if(cls == 1):
-			st.write("Risk")
+			st.write("You are at Risk!")
 		elif(cls == 0):
-			st.write("Safe")
+			st.write("You are Safe!")
 	
 	
 	
