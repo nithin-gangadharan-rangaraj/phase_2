@@ -13,8 +13,9 @@ st.set_page_config(**PAGE_CONFIG)
 html = '''
 <style>
 body {
-background-image: url("https://wallpapercave.com/wp/wp2838450.jpg");
-background-size: cover;}
+background-image: url("https://i.pinimg.com/originals/a0/7e/8f/a07e8f05a7d516ba7fd90519c5126058.jpg");
+background-size: cover;
+}
 </style>
 '''
 
