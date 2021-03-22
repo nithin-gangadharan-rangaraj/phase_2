@@ -7,10 +7,10 @@ import sklearn
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-html = '''
+page_bg_img = '''
 <style>
 body {
-background-image: url("https://i.pinimg.com/originals/a0/7e/8f/a07e8f05a7d516ba7fd90519c5126058.jpg");
+background-image: url("https://images.unsplash.com/photo-1542281286-9e0a16bb7366");
 background-size: cover;
 }
 </style>
@@ -32,7 +32,7 @@ def scale_fun(data):
 
 
 def main():
-	st.markdown(html, unsafe_allow_html=True)
+	st.markdown(page_bg_img, unsafe_allow_html=True)
 	st.subheader("*Enter the following parameters for prediction*")
 	age = st.slider("Select your age", 1, 100)
 	totChol = st.number_input("Enter Cholesterol")
