@@ -33,8 +33,8 @@ def scale_fun(data):
 
 
 def main():
-	stt.set_theme({'primary': '#1b3388'})
-	st.markdown(page_bg_img, unsafe_allow_html=True)
+	stt.set_theme({backgroundColor = '#273346'})
+	#st.markdown(page_bg_img, unsafe_allow_html=True)
 	st.subheader("*Enter the following parameters for prediction*")
 	age = st.slider("Select your age", 1, 100)
 	totChol = st.number_input("Enter Cholesterol")
