@@ -14,8 +14,7 @@ html = '''
 <style>
 body {
 background-image: url("https://wallpapercave.com/wp/wp2838450.jpg");
-background-size: cover;
-}
+background-size: cover;}
 </style>
 '''
 
