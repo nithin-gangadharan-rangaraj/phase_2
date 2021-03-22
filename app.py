@@ -7,9 +7,6 @@ import sklearn
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-PAGE_CONFIG = {"page_title":"Heart Risk Prediction","page_icon":"💪","layout":"centered"}
-st.set_page_config(**PAGE_CONFIG)
-
 html = '''
 <style>
 body {
@@ -22,10 +19,8 @@ background-size: cover;
 pickle_in = open('knn.pkl','rb')
 model = pickle.load(pickle_in)
 
-#pickle_in1 = open('full_data','rb')
-#data = pd.DataFrame(pickle.load(pickle_in1))
-
 st.title("Heart Risk Prediction")
+st.markdown(html, unsafe_allow_html=True)
 
 def scale_fun(data):
 	mean = [ 51.27028395, 240.94786493, 136.17309932,  84.32887391, 26.09129934,  75.99169532,  83.91940731]
@@ -38,7 +33,7 @@ def scale_fun(data):
 
 
 def main():
-	st.markdown(html, unsafe_allow_html=True)
+	#st.markdown(html, unsafe_allow_html=True)
 	st.subheader("*Enter the following parameters for prediction*")
 	age = st.slider("Select your age", 1, 100)
 	totChol = st.number_input("Enter Cholesterol")
