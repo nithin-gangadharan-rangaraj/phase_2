@@ -15,8 +15,6 @@ html = '''
 body {
 background-image: url("https://wallpapercave.com/wp/wp2838450.jpg");
 background-size: cover;
-#MainMenu {visibility: hidden;}
-footer {visibility: hidden;}
 }
 </style>
 '''
