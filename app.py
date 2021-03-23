@@ -17,12 +17,12 @@ background-size: cover;
 </style>
 '''
 
-hide_streamlit_style = “”"
+hide_streamlit_style = """
 
 #MainMenu {visibility: hidden;}
 footer {visibility: hidden;}
 
-“”"
+"""
 
 pickle_in = open('knn.pkl','rb')
 model = pickle.load(pickle_in)
