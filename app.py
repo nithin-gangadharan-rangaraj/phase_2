@@ -3,10 +3,7 @@ import streamlit_theme as stt
 import numpy as np
 import pandas as pd
 import pickle
-from PIL import Image
 import sklearn
-import seaborn as sns
-import matplotlib.pyplot as plt
 
 PAGE_CONFIG = {"page_title":"Heart Risk Prediction","page_icon":"💪","layout":"centered"}
 st.set_page_config(**PAGE_CONFIG)
