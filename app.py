@@ -32,7 +32,7 @@ def main():
 		"""
 		<style>
 		.reportview-container {
-		background: url("https://www.teahub.io/photos/full/8-87200_android-app-background-white.jpg")
+		background: url("https://digitalsynopsis.com/wp-content/uploads/2017/02/beautiful-color-gradients-backgrounds-048-strong-bliss.png")
 		}
 		</style>
 		""", unsafe_allow_html=True) 
