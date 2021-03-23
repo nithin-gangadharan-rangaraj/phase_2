@@ -13,11 +13,6 @@ model = pickle.load(pickle_in)
 
 st.title("Heart Risk Prediction")
 
-html = '''
-<body style="background-color:grey;">
-	<h1>Products</h1>
-</body>
-'''
 
 hide_streamlit_style = """
 <style>
@@ -32,7 +27,7 @@ def main():
 		"""
 		<style>
 		.reportview-container {
-		background: url("https://digitalsynopsis.com/wp-content/uploads/2017/02/beautiful-color-gradients-backgrounds-048-strong-bliss.png")
+		background: url("https://i.pinimg.com/originals/a5/91/17/a59117a046cbc0082afe2ce27622c0c4.jpg")
 		}
 		</style>
 		""", unsafe_allow_html=True) 
