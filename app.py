@@ -15,6 +15,7 @@ st.title("Heart Risk Prediction")
 
 html = '''
 <body style="background-color:grey;">
+	<h1>Products</h1>
 </body>
 '''
 
