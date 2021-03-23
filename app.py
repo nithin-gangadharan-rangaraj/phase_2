@@ -8,10 +8,13 @@ import sklearn
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-page_bg_img = '''
+PAGE_CONFIG = {"page_title":"Heart Risk Prediction","page_icon":"💪","layout":"centered"}
+st.set_page_config(**PAGE_CONFIG)
+
+html = '''
 <style>
 body {
-background-image: url("https://images.unsplash.com/photo-1542281286-9e0a16bb7366");
+background-image: url("https://i.pinimg.com/originals/a0/7e/8f/a07e8f05a7d516ba7fd90519c5126058.jpg");
 background-size: cover;
 }
 </style>
@@ -23,6 +26,7 @@ hide_streamlit_style = """
 footer {visibility: hidden;}
 </style>
 """
+
 
 pickle_in = open('knn.pkl','rb')
 model = pickle.load(pickle_in)
@@ -40,7 +44,7 @@ def scale_fun(data):
 
 
 def main():
-	st.markdown(page_bg_img, unsafe_allow_html = True)
+	st.markdown(html, unsafe_allow_html = True)
 	st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 	st.subheader("*Enter the following parameters for prediction*")
 	age = st.slider("Select your age", 1, 100)
