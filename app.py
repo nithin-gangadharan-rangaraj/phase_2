@@ -33,7 +33,6 @@ def main():
 		<style>
 		.reportview-container {
 		background: url("https://i.redd.it/ihfnlpbze7o01.jpg")
-		background-size: cover;
 		}
 		</style>
 		""", unsafe_allow_html=True) 
