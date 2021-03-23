@@ -32,14 +32,14 @@ def main():
 		</style>
 		""", unsafe_allow_html=True) 
 	st.markdown(hide_streamlit_style, unsafe_allow_html=True)
-	st.subheader("*Enter the following parameters for prediction*")
+	st.markdown("**Please *enter the following details* to know your results**")
 	age = st.slider("Select your age", 1, 100)
-	totChol = st.number_input("Enter Cholesterol")
-	sysBP = st.number_input("Enter Systolic BP")
-	diaBP = st.number_input("Enter Diastolic BP")
-	BMI = st.number_input("Enter BMI")
-	heartrate = st.number_input("Enter Heart Rate")
-	glucose = st.number_input("Enter Glucose")
+	totChol = st.number_input("Cholesterol:")
+	sysBP = st.number_input("Systolic Blood Pressure:")
+	diaBP = st.number_input("Diastolic Blood Pressure:")
+	BMI = st.number_input("BMI:")
+	heartrate = st.number_input("Heart Rate:")
+	glucose = st.number_input("Glucose:")
 	x = [age, totChol, sysBP, diaBP, BMI, heartrate, glucose]
 	new = np.array(scale_fun(x))
 	if(st.button("Predict")):
