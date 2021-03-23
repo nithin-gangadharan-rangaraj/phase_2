@@ -40,6 +40,7 @@ def scale_fun(data):
 
 
 def main():
+	st.markdown(page_bg_img, unsafe_allow_html = True)
 	st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 	st.subheader("*Enter the following parameters for prediction*")
 	age = st.slider("Select your age", 1, 100)
