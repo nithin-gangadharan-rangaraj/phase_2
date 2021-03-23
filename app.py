@@ -11,6 +11,11 @@ import matplotlib.pyplot as plt
 PAGE_CONFIG = {"page_title":"Heart Risk Prediction","page_icon":"💪","layout":"centered"}
 st.set_page_config(**PAGE_CONFIG)
 
+pickle_in = open('knn.pkl','rb')
+model = pickle.load(pickle_in)
+
+st.title("Heart Risk Prediction")
+
 html = '''
 <style>
 body {
@@ -26,21 +31,6 @@ hide_streamlit_style = """
 footer {visibility: hidden;}
 </style>
 """
-
-
-pickle_in = open('knn.pkl','rb')
-model = pickle.load(pickle_in)
-
-st.title("Heart Risk Prediction")
-
-def scale_fun(data):
-	mean = [ 51.27028395, 240.94786493, 136.17309932,  84.32887391, 26.09129934,  75.99169532,  83.91940731]
-	scale = [ 8.40482301, 45.21403725, 23.51018094, 12.35229104,  3.96554568, 11.60813337, 29.02018717]
-	transformed_data = []
-	for i in range(0,7):
-		x = (data[i] - mean[i])/scale[i]
-		transformed_data.append(round(x, 8))
-	return(transformed_data)
 
 
 def main():
@@ -70,7 +60,14 @@ def main():
 			st.write("You are Safe!")
 	
 	
-	
+def scale_fun(data):
+	mean = [ 51.27028395, 240.94786493, 136.17309932,  84.32887391, 26.09129934,  75.99169532,  83.91940731]
+	scale = [ 8.40482301, 45.21403725, 23.51018094, 12.35229104,  3.96554568, 11.60813337, 29.02018717]
+	transformed_data = []
+	for i in range(0,7):
+		x = (data[i] - mean[i])/scale[i]
+		transformed_data.append(round(x, 8))
+	return(transformed_data)	
 	
 		
 		
