@@ -32,7 +32,7 @@ def main():
 		"""
 		<style>
 		.reportview-container {
-		background: url("https://i.pinimg.com/originals/43/21/88/432188f502b9a625f74a7d8cacbe5b8b.jpg")
+		background: url("https://img.freepik.com/free-vector/bright-background-with-dots_1055-3132.jpg?size=338&ext=jpg")
 		}
 		</style>
 		""", unsafe_allow_html=True) 
