@@ -28,7 +28,14 @@ footer {visibility: hidden;}
 
 
 def main():
-	st.markdown(html, unsafe_allow_html = True)
+	st.markdown(
+		"""
+		<style>
+		.reportview-container {
+		background: url("url_goes_here")
+		}
+		</style>
+		""", unsafe_allow_html=True) 
 	st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 	st.subheader("*Enter the following parameters for prediction*")
 	age = st.slider("Select your age", 1, 100)
