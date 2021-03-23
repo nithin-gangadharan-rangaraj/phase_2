@@ -18,10 +18,10 @@ background-size: cover;
 '''
 
 hide_streamlit_style = """
-
+<style>
 #MainMenu {visibility: hidden;}
 footer {visibility: hidden;}
-
+</style>
 """
 
 pickle_in = open('knn.pkl','rb')
