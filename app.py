@@ -46,7 +46,7 @@ def main():
 			st.markdown("**Please enter valid details!**")
 			break
 		else:
-			with st.beta_expander("Check Results"):
+			with st.beta_expander("Check Results") as False:
 				new = np.array(scale_fun(x))
 				probs = model.predict_proba(new.reshape(1, -1))
 				cls = model.predict(new.reshape(1, -1))
