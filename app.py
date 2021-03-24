@@ -44,6 +44,7 @@ def main():
 	for parameter in x:
 		if (parameter <= 0.0):
 			st.markdown("**Please enter valid details!**")
+			break
 		else:
 			with st.beta_expander("Check Results"):
 				new = np.array(scale_fun(x))
