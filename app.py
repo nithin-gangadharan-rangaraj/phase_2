@@ -41,12 +41,12 @@ def main():
 	heartrate = st.number_input("Heart Rate:")
 	glucose = st.number_input("Glucose:")
 	x = [age, totChol, sysBP, diaBP, BMI, heartrate, glucose]
-	for parameter in x:
-		if (parameter <= 0.0):
-			st.markdown("**Please enter valid details!**")
-			break
-		else:
-			with st.beta_expander("Check Results") as False:
+	with st.beta_expander("Check Results"):
+		for parameter in x:
+			if (parameter <= 0.0):
+				st.markdown("**Please enter valid details!**")
+				break
+			else:
 				new = np.array(scale_fun(x))
 				probs = model.predict_proba(new.reshape(1, -1))
 				cls = model.predict(new.reshape(1, -1))
