@@ -41,24 +41,27 @@ def main():
 	heartrate = st.number_input("Heart Rate:")
 	glucose = st.number_input("Glucose:")
 	x = [age, totChol, sysBP, diaBP, BMI, heartrate, glucose]
+	for parameter in x:
+		if (parameter <= 0.0):
+			st.markdown("**Please enter valid details!**")
+			check = False
+		else:
+			check = True
+			
 	with st.beta_expander("Check Results"):
-		for parameter in x:
-			if (parameter <= 0.0):
-				st.markdown("**Please enter valid details!**")
-				break
-			else:
-				new = np.array(scale_fun(x))
-				probs = model.predict_proba(new.reshape(1, -1))
-				cls = model.predict(new.reshape(1, -1))
+		if (check):
+			new = np.array(scale_fun(x))
+			probs = model.predict_proba(new.reshape(1, -1))
+			cls = model.predict(new.reshape(1, -1))
 		#if (probs[0][1] > probs[0][0]):
 		#	percentage = probs[0][1] * 100
 		#	st.write("You are ",round(percentage,2),"% at a risk of developing CVD!")
 		#elif (probs[0][0] > probs[0][1]):
 		#	st.write("No worries, You are safe!")
-				if(cls == 1):
-					st.write("You are at Risk!")
-				elif(cls == 0):
-					st.write("You are Safe!")
+			if(cls == 1):
+				st.write("You are at Risk!")
+			elif(cls == 0):
+				st.write("You are Safe!")
 	
 	
 def scale_fun(data):
