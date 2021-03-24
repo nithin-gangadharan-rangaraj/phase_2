@@ -45,6 +45,7 @@ def main():
 		if (parameter <= 0.0):
 			st.markdown("**Please enter valid details!**")
 			check = False
+			break
 		else:
 			check = True
 			
