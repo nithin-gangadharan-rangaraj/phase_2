@@ -8,7 +8,7 @@ import sklearn
 PAGE_CONFIG = {"page_title":"Heart Risk Prediction","page_icon":"💪","layout":"centered"}
 st.set_page_config(**PAGE_CONFIG)
 
-pickle_in = open('knn.pkl','rb')
+pickle_in = open('model_final_heart_rank9.pkl','rb')
 model = pickle.load(pickle_in)
 
 st.title("Heart Risk Prediction")
@@ -34,13 +34,24 @@ def main():
 	st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 	st.markdown("**Please *enter the following details* to know your results**")
 	age = st.slider("Select your age", 1, 100)
+	select_gender = st.selectbox('Select your gender', ['Male', 'Female'])
+	if (select_gender == 'Male'):
+		male = 1
+	elif (select_gender == 'Female'):
+		male = 0
+	select_hyp = st.selectbox('Are you prevalent to hypertension', ['Yes', 'No'])
+	if (select_hyp == 'Yes'):
+		prevalenthyp = 1
+	elif (select_hyp == 'No'):
+		prevalenthyp = 0
+	cigsPerDay = st.number_input("Cigarettes Per Day:")
 	totChol = st.number_input("Cholesterol:")
 	sysBP = st.number_input("Systolic Blood Pressure:")
 	diaBP = st.number_input("Diastolic Blood Pressure:")
 	BMI = st.number_input("BMI:")
 	heartrate = st.number_input("Heart Rate:")
 	glucose = st.number_input("Glucose:")
-	x = [age, totChol, sysBP, diaBP, BMI, heartrate, glucose]
+	x = [male, age, cigsPerDay, prevalenthyp, totChol, sysBP, diaBP, BMI, heartrate, glucose]
 	for parameter in x:
 		if (parameter <= 0.0):
 			st.markdown("**Please enter valid details!**")
@@ -66,8 +77,10 @@ def main():
 	
 	
 def scale_fun(data):
-	mean = [ 51.27028395, 240.94786493, 136.17309932,  84.32887391, 26.09129934,  75.99169532,  83.91940731]
-	scale = [ 8.40482301, 45.21403725, 23.51018094, 12.35229104,  3.96554568, 11.60813337, 29.02018717]
+	#mean = [ 51.27028395, 240.94786493, 136.17309932,  84.32887391, 26.09129934,  75.99169532,  83.91940731]
+	mean = [  0.49123882,  51.4847255 ,   9.5069302 ,   0.38302923, 240.34093837, 136.7986928 ,  84.61766909,  26.07297567, 76.16238202,  84.07489795]
+	#scale = [ 8.40482301, 45.21403725, 23.51018094, 12.35229104,  3.96554568, 11.60813337, 29.02018717]
+	scale = [ 0.47121675,  8.38727815, 11.84688265,  0.47195591, 44.88548986, 24.20580684, 12.67850225,  3.9057076 , 11.50550338, 29.51885492]
 	transformed_data = []
 	for i in range(0,7):
 		x = (data[i] - mean[i])/scale[i]
