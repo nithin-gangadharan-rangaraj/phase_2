@@ -82,7 +82,7 @@ def scale_fun(data):
 	#scale = [ 8.40482301, 45.21403725, 23.51018094, 12.35229104,  3.96554568, 11.60813337, 29.02018717]
 	scale = [ 0.47121675,  8.38727815, 11.84688265,  0.47195591, 44.88548986, 24.20580684, 12.67850225,  3.9057076 , 11.50550338, 29.51885492]
 	transformed_data = []
-	for i in range(0,7):
+	for i in range(0,10):
 		x = (data[i] - mean[i])/scale[i]
 		transformed_data.append(round(x, 8))
 	return(transformed_data)	
