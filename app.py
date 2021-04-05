@@ -65,11 +65,11 @@ def main():
 			new = np.array(scale_fun(x))
 			probs = model.predict_proba(new.reshape(1, -1))
 			cls = model.predict(new.reshape(1, -1))
-		if (probs[0][1] > probs[0][0]):
-			percentage = probs[0][1] * 100
-			st.write("You are ",round(percentage,2),"% at a risk of developing CVD!")
-		elif (probs[0][0] > probs[0][1]):
-			st.write("No worries, You are safe!")
+			if (probs[0][1] > probs[0][0]):
+				percentage = probs[0][1] * 100
+				st.write("You are ",round(percentage,2),"% at risk!")
+			elif (probs[0][0] > probs[0][1]):
+				st.write("No worries, You are safe!😀")
 			#if(cls == 1):
 			#	st.write("You are at Risk!")
 			#elif(cls == 0):
