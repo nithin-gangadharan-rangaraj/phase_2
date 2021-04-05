@@ -39,7 +39,7 @@ def main():
 		male = 1
 	elif (select_gender == 'Female'):
 		male = 0
-	select_hyp = st.selectbox('Are you prevalent to hypertension', ['Yes', 'No'])
+	select_hyp = st.selectbox('Are you prevalent to hypertension?', ['Yes', 'No'])
 	if (select_hyp == 'Yes'):
 		prevalenthyp = 1
 	elif (select_hyp == 'No'):
@@ -52,7 +52,7 @@ def main():
 	heartrate = st.number_input("Heart Rate:")
 	glucose = st.number_input("Glucose:")
 	x = [male, age, cigsPerDay, prevalenthyp, totChol, sysBP, diaBP, BMI, heartrate, glucose]
-	for parameter in x:
+	for parameter in [age, totChol, sysBP, diaBP, BMI, heartrate, glucose]:
 		if (parameter <= 0.0):
 			st.markdown("**Please enter valid details!**")
 			check = False
