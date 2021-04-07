@@ -62,9 +62,7 @@ def main():
 	if st.button("Check Results"):
 		st.text(BMI)
 		st.text(heartrate)
-		if( (BMI <= 0) or (heartrate <= 0) ):
-			st.warning("Error")
-		if ((age or totChol or sysBP or diaBP or BMI or heartrate or glucose) <= 0.0):
+		if ((age <= 0) or (totChol <= 0) or (sysBP <= 0) or (diaBP <= 0) or (BMI <= 0) or (heartrate <= 0) or (glucose <= 0)):
 			st.warning("Please enter valid details")
 		else:
 			new = np.array(scale_fun(x))
