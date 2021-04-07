@@ -59,17 +59,25 @@ def main():
 			break
 		else:
 			check = True
+	
+	result = round(((model.predict_proba(x.reshape(1, -1))*100)[0][1]),2)
+	my_expander = st.beta_expander("Check Results")
+	with my_expander:
+		if (result > 50.0):
+			st.write("You are at ",result, "% at risk")
+		elif (result <=50.0):
+			st.write("Don't worry! You are safe 😀")
 			
-	with st.beta_expander("Check Results"):
-		if (check):
-			new = np.array(scale_fun(x))
-			probs = model.predict_proba(new.reshape(1, -1))
-			cls = model.predict(new.reshape(1, -1))
-			if (probs[0][1] > probs[0][0]):
-				percentage = probs[0][1] * 100
-				st.write("You are ",round(percentage,2),"% at risk!")
-			elif (probs[0][0] > probs[0][1]):
-				st.write("No worries, You are safe!😀")
+	#with st.beta_expander("Check Results"):
+	#	if (check):
+	#		new = np.array(scale_fun(x))
+	#		probs = model.predict_proba(new.reshape(1, -1))
+	#		cls = model.predict(new.reshape(1, -1))
+	#		if (probs[0][1] > probs[0][0]):
+	#			percentage = probs[0][1] * 100
+	#			st.write("You are ",round(percentage,2),"% at risk!")
+	#		elif (probs[0][0] > probs[0][1]):
+	#			st.write("No worries, You are safe!😀")
 			#if(cls == 1):
 			#	st.write("You are at Risk!")
 			#elif(cls == 0):
