@@ -59,7 +59,7 @@ def main():
 	#		break
 	#	else:
 			#check = True
-	with st.beta_expander("Check Results"):
+	if st.button("Check Results"):
 		if ((age <= 0) or (totChol <= 0) or (sysBP <= 0) or (diaBP <= 0) or (BMI <= 0) or (heartrate <= 0) or (glucose <= 0)):
 			st.warning("Please enter valid details")
 		else:
