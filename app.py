@@ -55,19 +55,19 @@ def main():
 	for parameter in [age, totChol, sysBP, diaBP, BMI, heartrate, glucose]:
 		if (parameter <= 0.0):
 			st.markdown("**Please enter valid details!**")
-			check = False
+			#check = False
 			break
 		else:
-			check = True
+			#check = True
+			with st.beta_expander("Check Results"):
+				new = np.array(scale_fun(x))
+				probs = model.predict_proba(new.reshape(1, -1))
+				cls = model.predict(new.reshape(1, -1))
+				result = round((probs[0][1]*100),2)
+				st.write("You are at ",result, "% at risk")
 	
 				
-	with st.beta_expander("Check Results"):
-		if (check):
-			new = np.array(scale_fun(x))
-			probs = model.predict_proba(new.reshape(1, -1))
-			cls = model.predict(new.reshape(1, -1))
-			result = round((probs[0][1]*100),2)
-			st.write("You are at ",result, "% at risk")
+	
 			#if (result > 50.0):
 			#	st.write("You are at ",result, "% at risk")
 			#elif (result <=50.0):
