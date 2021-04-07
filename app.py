@@ -61,7 +61,7 @@ def main():
 			#check = True
 	
 	if ((age or totChol or sysBP or diaBP or BMI or heartrate or glucose) <= 0.0):
-			st.write("Please enter valid details")
+		st.write("Please enter valid details")
 	else:
 		with st.beta_expander("Check Results"):
 			new = np.array(scale_fun(x))
