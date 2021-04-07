@@ -66,8 +66,7 @@ def main():
 		cls = model.predict(new.reshape(1, -1))
 		result = round((probs[0][1]*100),2)
 		if ((age or totChol or sysBP or diaBP or BMI or heartrate or glucose) <= 0.0):
-			st.warning("Please enter valid details")
-			st.stop()
+			st.write("Please enter valid details")
 		else:
 			st.write("You are at ",result, "% at risk")
 	
