@@ -61,7 +61,7 @@ def main():
 			#check = True
 	if st.button("Check Results"):
 		if ((age or totChol or sysBP or diaBP or BMI or heartrate or glucose) <= 0.0):
-			st.write("Please enter valid details")
+			st.warning("Please enter valid details")
 		else:
 			new = np.array(scale_fun(x))
 			probs = model.predict_proba(new.reshape(1, -1))
