@@ -67,10 +67,11 @@ def main():
 			probs = model.predict_proba(new.reshape(1, -1))
 			cls = model.predict(new.reshape(1, -1))
 			result = round((probs[0][1]*100),2)
-			if (result > 50.0):
-				st.write("You are at ",result, "% at risk")
-			elif (result <=50.0):
-				st.write("Don't worry! You are safe 😀")
+			st.write("You are at ",result, "% at risk")
+			#if (result > 50.0):
+			#	st.write("You are at ",result, "% at risk")
+			#elif (result <=50.0):
+			#	st.write("Don't worry! You are safe 😀")
 			#if (probs[0][1] > probs[0][0]):
 			#	percentage = probs[0][1] * 100
 			#	st.write("You are ",round(percentage,2),"% at risk!")
