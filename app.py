@@ -60,14 +60,14 @@ def main():
 	#	else:
 			#check = True
 	
-	with st.beta_expander("Check Results"):
-		new = np.array(scale_fun(x))
-		probs = model.predict_proba(new.reshape(1, -1))
-		cls = model.predict(new.reshape(1, -1))
-		result = round((probs[0][1]*100),2)
-		if ((age or totChol or sysBP or diaBP or BMI or heartrate or glucose) <= 0.0):
+	if ((age or totChol or sysBP or diaBP or BMI or heartrate or glucose) <= 0.0):
 			st.write("Please enter valid details")
-		else:
+	else:
+		with st.beta_expander("Check Results"):
+			new = np.array(scale_fun(x))
+			probs = model.predict_proba(new.reshape(1, -1))
+			cls = model.predict(new.reshape(1, -1))
+			result = round((probs[0][1]*100),2)
 			st.write("You are at ",result, "% at risk")
 	
 				
