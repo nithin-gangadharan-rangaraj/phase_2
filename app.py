@@ -52,19 +52,24 @@ def main():
 	heartrate = st.number_input("Heart Rate:")
 	glucose = st.number_input("Glucose:")
 	x = [male, age, cigsPerDay, prevalenthyp, totChol, sysBP, diaBP, BMI, heartrate, glucose]
-	for parameter in [age, totChol, sysBP, diaBP, BMI, heartrate, glucose]:
-		if (parameter <= 0.0):
-			st.markdown("**Please enter valid details!**")
+	#for parameter in [age, totChol, sysBP, diaBP, BMI, heartrate, glucose]:
+	#	if (parameter <= 0.0):
+	#		st.markdown("**Please enter valid details!**")
 			#check = False
-			break
-		else:
+	#		break
+	#	else:
 			#check = True
-			with st.beta_expander("Check Results"):
-				new = np.array(scale_fun(x))
-				probs = model.predict_proba(new.reshape(1, -1))
-				cls = model.predict(new.reshape(1, -1))
-				result = round((probs[0][1]*100),2)
-				st.write("You are at ",result, "% at risk")
+	
+	with st.beta_expander("Check Results"):
+		new = np.array(scale_fun(x))
+		probs = model.predict_proba(new.reshape(1, -1))
+		cls = model.predict(new.reshape(1, -1))
+		result = round((probs[0][1]*100),2)
+		if ((age | totChol | sysBP | diaBP | BMI | heartrate | glucose) <= 0.0):
+			st.warning("Please enter valid details")
+			st.stop()
+		else:
+			st.write("You are at ",result, "% at risk")
 	
 				
 	
