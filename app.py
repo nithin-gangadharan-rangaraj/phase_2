@@ -23,14 +23,14 @@ footer {visibility: hidden;}
 
 
 def main():
-	st.markdown(
-		"""
-		<style>
-		.reportview-container {
-		background: url("https://i.pinimg.com/originals/a5/91/17/a59117a046cbc0082afe2ce27622c0c4.jpg")
-		}
-		</style>
-		""", unsafe_allow_html=True) 
+	#st.markdown(
+	#	"""
+	#	<style>
+	#	.reportview-container {
+	#	background: url("https://i.pinimg.com/originals/a5/91/17/a59117a046cbc0082afe2ce27622c0c4.jpg")
+	#	}
+	#	</style>
+	#	""", unsafe_allow_html=True) 
 	st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 	st.markdown("**Please *enter the following details* to know your results**")
 	age = st.slider("Select your age", 1, 100)
