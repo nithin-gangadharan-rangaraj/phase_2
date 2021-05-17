@@ -27,7 +27,7 @@ def main():
 		"""
 		<style>
 		.reportview-container {
-		background: url("https://coolbackgrounds.io/images/backgrounds/white/pure-white-background-85a2a7fd.jpg")
+		background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcp1X5ZkgINkfHiqwgEj3MGo3IHKjq8OMGeHI9oew-maKVNXshpBg62WbBC8TTdOC2H4g&usqp=CAU")
 		}
 		</style>
 		""", unsafe_allow_html=True) 
